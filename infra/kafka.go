@@ -19,7 +19,7 @@ var kafkaConfig *kafka.ConfigMap = &kafka.ConfigMap{
 	"bootstrap.servers":            "localhost",
 	"group.id":                     "myGroup",
 	"auto.offset.reset":            "earliest",
-	"queue.buffering.max.messages": 1,
+	"queue.buffering.max.messages": 1, // With that, every message will be written to the disk whenever the producer creates a event
 }
 
 func (k *KafkaHTTQ) GetMessage(w http.ResponseWriter, r *http.Request) {
